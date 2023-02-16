@@ -1,48 +1,48 @@
 # NAS 기본 변수
 
-- {유료도메인} : 없음
+    - {유료도메인} : 없음
 
-- {name} : colie
+    - {name} : colie
 
-- {filestation별칭} : filestation
+    - {filestation별칭} : filestation
 
-- {notestation별칭} : notestation
+    - {notestation별칭} : notestation
 
-- {innerIPV4} : 192.168.219.100
+    - {innerIPV4} : 192.168.219.100
 
-- {publicIPV4} : 112.148.121.43
+    - {publicIPV4} : 112.148.121.43
 
-- {smbConnection} : //colie | smb://colie | //{innerIPV4}
+    - {smbConnection} : //colie | smb://colie | //{innerIPV4}
 
-- {QuickConnect} : http://QuickConnect.to/colie
+    - {QuickConnect} : http://QuickConnect.to/colie
 
 # 기본 내용
 
-- 도메인 : {유료 도메인} -> {name}.synology.me 가능!
+    - 도메인 : {유료 도메인} -> {name}.synology.me 가능!
 
-- “app | Playstore”에서 : DSFile 어플로 접속가능
+    - “app | Playstore”에서 : DSFile 어플로 접속가능
 
 # 포트 (라우터 포트포워딩 필요)
 
-- ftps://{name}.synology.me:21 -> ftp ssl인증 프로토콜 서비스 (원격 파일서비스)
+    - ftps://{name}.synology.me:21 -> ftp ssl인증 프로토콜 서비스 (원격 파일서비스)
 
-- http://{name}.synology.me:5000 -> 시놀로지 나스 메인 홈
+    - http://{name}.synology.me:5000 -> 시놀로지 나스 메인 홈
 
-- https://{name}.synology.me:5001 -> 시놀로지 나스 메인 홈 {ssl}
+    - https://{name}.synology.me:5001 -> 시놀로지 나스 메인 홈 {ssl}
 
-- http://{name}.synology.me/{filestation별칭}:7000 -> 시놀로지 나스 메인 홈
+    - http://{name}.synology.me/{filestation별칭}:7000 -> 시놀로지 나스 메인 홈
 
-- https://{name}.synology.me/{filestation별칭}:7001 -> 시놀로지 나스 메인 홈 {ssl}
+    - https://{name}.synology.me/{filestation별칭}:7001 -> 시놀로지 나스 메인 홈 {ssl}
 
-- http://{name}.synology.me/{notetation별칭}:9350 -> 시놀로지 나스 메인 홈
+    - http://{name}.synology.me/{notetation별칭}:9350 -> 시놀로지 나스 메인 홈
 
-- https://{name}.synology.me/{notestation별칭}:9351 -> 시놀로지 나스 메인 홈 {ssl}
+    - https://{name}.synology.me/{notestation별칭}:9351 -> 시놀로지 나스 메인 홈 {ssl}
 
-- vpn server: 1723 -> TCP
+    - vpn server: 1723 -> TCP
 
-- vpn server: 1701 -> UDP
+    - vpn server: 1701 -> UDP
 
-- 기타 포트 : admin만 forwarding 변경 가능
+    - 기타 포트 : admin만 forwarding 변경 가능
 
 # 추가 내용
 - 공유폴더
@@ -165,6 +165,7 @@
 
 		- 서비스 – 결과 – 속도 제한 – 업로드 제한 KB/s – 다운로드 제한 (KB/s)
 
+## DataManageRule
 # 데이터 관리 규정
 
     HandS는 관리 효율성과 사용자 권리 인식울 제고하기 위해 아래와 같은 방식으로 데이터 관리방식을 규정한다.
@@ -352,6 +353,9 @@
 
         - 05조 03항 04호. 폴더의 목적이 별도의 README.txt를 보지 않아도 자명히 이해될 경우
 
+        - 05조 03항 05호. README.txt의 경우 {classgroupname}의 생략이 허용될 수 있다.
+
+## Data
 # 데이터
 
 용어의 정의
@@ -368,21 +372,27 @@
 
 tab으로 데이터의 위계관계를 구분한다. (같은 디렉토리의 데이터는 동일한 "열\_column"에 나열된다.)
 
-서버에 처음 존재하는 폴더는 다음과 같이 표현하고,
+서버에 처음 존재하는 데이터는 다음과 같이 표현하고,
 
     {dataname} : {directoryroot}
 
-위 폴더를 제외하고는 다음과 같이 표현하다.
+위 데이터를 제외하고는 다음과 같이 표현하다.
 
     {dataname} : {relativeaddress}
-
+## DataStructure
 # 데이터 구조
 
+        default폴더 내용
+
 - HS : {default}/../
+
+* * *
 
        디자인부서
 
 - HS_DS_Design : {default}/
+
+    - README.txt : HS_DS_Design /
 
 * * *
 
@@ -390,11 +400,15 @@ tab으로 데이터의 위계관계를 구분한다. (같은 디렉토리의 데
 
 - HS_ED_Education : {default}/
 
+    - README.txt : HS_ED_Education/
+
 * * *
 
        기타폴더(잡)
 
 - HS_ETC_Extra : {default}/
+
+    - README.txt : HS_ETC_Extra/
 
 * * *
 
@@ -402,17 +416,23 @@ tab으로 데이터의 위계관계를 구분한다. (같은 디렉토리의 데
 
 - HS_FI_Finance : {default}/
 
+    - README.txt : HS_FI_Finance/
+
 * * *
 
        중앙관리
 
- HS_HM_HeadManage : {default}/
+- HS_HM_HeadManage : {default}/
+
+    - README.txt : HS_HM_HeadManage/
 
 * * *
 
        관리부서
 
- HS_MS_ManageSupport : {default}/
+- HS_MS_ManageSupport : {default}/
+
+    - README.txt : HS_MS_ManageSupport/
 
 * * *
 
@@ -420,13 +440,15 @@ tab으로 데이터의 위계관계를 구분한다. (같은 디렉토리의 데
 
 - HS_PJ_Project : {default}/
 
+    - README.txt : HS_PJ_Project/
+
 * * *
 
        공공폴더(공개_공유)
 
 - HS_PB_Public : {default}/
 
-    - README.txt : 
+    - README.txt : HS_PB_Public/
 
 * * *
 
