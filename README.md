@@ -131,8 +131,13 @@
   - 03조 03항. 폴더명과 파일명은 영문, 숫자, "_"로 구성된 문장만을 사용한다.
   - 03조 04항. 모든 폴더는 각 폴더의 목적을 담은 README.txt 파일을 포함한다.
 - 제 04조. 추천
-  - 04조 01항. {verx-x}로서 {RVS}{YYYY}{MM}{DD}글자수를 맞추어 날짜 형식을 쓰는걸 추천한다.
+  - 04조 01항. {verx-x}로서 {RVS}{YYYY}{MM}{DD} 아래 보조 설명에서 언급된 글자수를 맞추어 날짜 형식을 쓰는걸 추천한다.
 
+        보조 설명
+            - {RVS} : RevisionCode : 유사파일 간의 개정순번 매길 때 사용한다. (3글자)
+            - {YYYY} : YearCode : 년도를 나타낼 때 사용한다. (4글자)
+            - {MM} : MonthCode : 월을 나타낼 때 사용한다. (2글자)
+            - {DD} : DayCode : 일을 나타낼 때 사용한다. (2글자)
         예시
             - HS_AA_BB_MSE_00120230101_MapleStoryEngine.exe
             - HS_AA_BB_MSE_00220230101_MapleStoryEngine.exe
