@@ -162,6 +162,7 @@
                 - 하위폴더명: BS_02AA_01BB
         cf) 이 방법은 하위폴더의 classgroupname에도 영향을 끼칠 수 있으므로 신중히 순서를 고려해야한다.
   - 04조 05항. .zip과같은 압축파일형태의 데이터 저장은 권장하지 않는다. (접근성 저하로 인한 데이터 재사용률이 떨어진다.)
+  - 04조 06항. 중괄호 "{}"로 감싸진 부분은 코드(Code)라고 부르는 것을 추천한다.
 - 제 05조. 예외
   - 05조 01항. 응용프로그램 등에 의해 자동 생성되는 의존성 폴더, 파일에 한하여 예외가 허용될 수 있다.
   - 05조 02항. 폴더명과 파일명에 한글로 전달해야할 목적성이 뚜렷하다면 {filename}과 {ref}에 한글이 허용될 수 있다.
@@ -174,6 +175,7 @@
   - 05조 04항. 03조 02항 04호에서 하위파일(파생원인파일)이 없더라도 해당 조항 내용이 허용될 수 있다.
   - 05조 05항. 02조 04항 그리고 02조 05항에서 언급한대로 왼쪽 끝을 {index} 시작하는 classname 그리고 filename의 폴더의 하위폴더에서는 상위 폴더의 classname에서의 "{index}\_" 생략이 허용될 수 있다.
   - 05조 06항. {index}의 창의적인 삽입 기법이 있다면 협의체의 회의를 거쳐 규정을 조정한다.
+  - 05조 07항. {class##}는 되도록 짧은 코드로 사용함을 추천한다. (2글자 정도의 약어를 추천)
 
 ## 데이터
 
@@ -198,6 +200,12 @@ tab으로 데이터의 위계관계를 구분한다. (같은 디렉토리의 데
 ## 데이터 구조
 
 - HS : {default}/../ : default폴더 내용
+  - HS_AP_Apply : {default}/ : 지원신청폴더
+    - a
+      - a-d
+    - b
+      - b-c
+    - README.txt : HS_AP_Apply /
   - HS_DS_Design : {default}/ : 디자인부서
     - a
       - a-d
@@ -229,7 +237,7 @@ tab으로 데이터의 위계관계를 구분한다. (같은 디렉토리의 데
       - b-c
     - README.txt : HS_HM_HeadManage/
   - HS_MS_ManageSupport : {default}/ : 관리부서
-    - a
+    - HS_MS_HR_HumanResource : HS_MS_ManageSupport/
       - a-d
     - b
       - b-c
@@ -240,12 +248,18 @@ tab으로 데이터의 위계관계를 구분한다. (같은 디렉토리의 데
     - b
       - b-c
     - README.txt : HS_PJ_Project/
-  - HS_PB_Public : {default}/ : 공공폴더(공개_공유)
+  - HS_PA_PublicForAll : {default}/ : 공용폴더(핸즈전체공개_공유)
     - a
       - a-d
     - b
       - b-c
-    - README.txt : HS_PB_Public/
+    - README.txt :HS_PA_PublicForAll/
+  - HS_PE_PublicExecutives : {default}/ : 공용폴더(임원진공개_공유)
+    - a
+      - a-d
+    - b
+      - b-c
+    - README.txt : HS_PE_PublicExecutives/
   - HS_SP_Supporters : {default}/ : 서포터즈부서
     - a
       - a-d
