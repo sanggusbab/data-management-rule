@@ -18,14 +18,17 @@
     - 모든 폴더는 classname을 갖는다.
   - 서버폴더
     - 서버폴더의 classname은 주소공간을 대표하는 단어로 표현한다.
-      - 예시
-        - 주소 공간 : C://users/home/hands/desktop/handsdrive/
-        - classname : HS
+
+            예시
+                - 주소 공간 : C://users/home/hands/desktop/handsdrive/
+                - classname : HS
   - 폴더명
     - classname과 언더바 "\_"로 구성된다.
     - classname은 {class##} 형태로 대표된다.
     - 폴더명은 {classgroupname}으로 표현을 대체할 수 있다.
-      - {classgroupname} = {class01}\_{class02}\_{class03}\_{class04}
+
+            예시
+                - {classgroupname} = {class01}\_{class02}\_{class03}\_{class04}
   - 파일
     - 폴더의 가장 끝단에 존재하는 데이터
 
