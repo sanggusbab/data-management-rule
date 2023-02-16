@@ -47,6 +47,24 @@
     - filename 또는 classname의 앞에 붙일 수 있는 수의 나열을 의미한다.
     - 인덱스는 {index}로 표현한다.
     - 폴더 내 정렬 시 깔끔한 UI를 제공받을 수 있게 한다.
+- 전체에 대한 예시
+
+        총예시 (폴더)
+            - 주소 공간 : C://users/home/hands/desktop/handsdrive/HS_01FI_Finance
+            - {classgroupname} = HS_FI_Finance
+            - {index} = 01
+            - {class##} = FI
+            - {ref} = Finance
+            - classname = 01FI_Finance
+        총예시 (파일)
+            - 주소 공간 : C://users/home/hands/desktop/handsdrive/HS_FI_Finance/HS_FI_01FEv1-0-0_FinanceEnginfirst.exe
+            - {classgroupname} = HS_FI
+            - {index} = 01
+            - {filename} = FE
+            - {verx-x} = V1-0-0
+            - {ref} = FinanceEnginfirst
+            - {ext} = exe
+            - 파일명 = HS_FI_01FEv1-0-0_FinanceEnginfirst.exe
 
 ---
 
