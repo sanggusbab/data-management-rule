@@ -33,9 +33,9 @@
 
     - 일반적으로 상위폴더의 {foldername}은 {classgroupname}으로 표현된다. 세부 사항은 규정에서 다룬다.
 
-    - {classname}은 {class##}과 의미가 등가하다. "##"는 다른 문자로 대체될 수 있는 부분을 말한다.
+    - {classname}은 {class##}과 의미가 같다. "##"는 다른 문자로 대체될 수 있는 부분을 말한다.
 
-    - {foldername}은 "{classgroupname}\_{classname}"과 의미가 등가하다.
+    - {foldername}은 "{classgroupname}\_{classname}"과 의미가 같다.
 
   - 서버
 
@@ -65,9 +65,9 @@
 
     - 일반적으로 상위폴더의 {foldername}은 {classgroupname}으로 표현된다. 세부 사항은 규정에서 다룬다.
 
-    - {filenameIE}는 {filename}.{ext}와 의미가 등가이다.
+    - {filenameIE}는 {filename}.{ext}와 의미가 같다.
 
-    - {fullfilenameIE}는 {classgroupname}\_{filename}.{ext}와 의미가 등가이다.
+    - {fullfilenameIE}는 {classgroupname}\_{filename}.{ext}와 의미가 같다.
 
   - 버전 (version code)
 
@@ -90,6 +90,8 @@
 ---
 
 ## 규정
+
+"언어의 정의"에서 다룬 용어는 규정에서 다루는 용어와 의미가 같다.
 
 - 제 01조. 협의
 
@@ -129,7 +131,7 @@
 
 - 제 02조. 기본시항
 
-  - 02조 01항. {default} = "HS"이다.
+  - 02조 01항. {default} = "HS"로 정한다.
 
   - 02조 02항. {ref} 사용 시 {classname} 우측에 "\_{ref}"를 추가한다.
 
