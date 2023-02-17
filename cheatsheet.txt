@@ -1,4 +1,4 @@
-{classname} 	= {class##}
+{classname} 	= 가장우측{class##}
 
 서버{foldername}	= {default} = 서버{classname}
 
@@ -8,7 +8,8 @@
 
 {foldername}	= {classgroupname}_{index}_{classname}_{verx-x}_{ref}
 
-부분파일명	= {filenameIE}	= {filename}.{ext}
+부분파일명	= {filenameIE}	= {filename}_{verx-x}_{ref}.{ext}
+
 파일명 		= {fullfilenameIE}	= {classgroupname}_{filenameIE}
 
 버전 		= {verx-x}
@@ -19,4 +20,5 @@
 파일명		= {fullfilenameIE}	= {classgroupname}_{index}_{filename}_{verx-x}_{ref}.{ext}
 
 (예외)
-서버폴더 only has {classname} but {classgroupname}, {foldername}
+서버 only has {classname} but {classgroupname}
+서버 하위로부터 {classgroupname} 참조시에만 {foldername} <= {classname} 할당

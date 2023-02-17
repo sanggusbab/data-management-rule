@@ -45,7 +45,7 @@
 
     - 서버폴더의 {classname}은 {default}로 표현한다.
 
-    - 서버폴더의 {foldername}은 {default}로 대체한다.
+    - {classgroup}에 참조되는 서버폴더의 {foldername}은 {default}로 대체한다.
 
   - 파일
   
@@ -86,6 +86,12 @@
     - 인덱스는 {index}라 표현한다.
 
     - 폴더 내 정렬 시 깔끔한 UI를 제공받을 수 있게 한다.
+
+  - 의존성 (dependency)
+
+    - 의존성은 하나의 폴더 또는 파일을 기준으로 하위 데이터 간의 논리적 관계가 장기적으로 유지될 가능성을 말한다.
+
+    - 예를 들어, 응용프로그램의 폴더와 라이브러리 사이의 의존성은 매우 강하다.
 
 ---
 
@@ -145,7 +151,7 @@
 
     - 02조 05항 1호. {verx-x}와 {ref} 모두 사용 시 {filename} 우측에 "\_{verx-x}\_{ref}"를 추가한다.
 
-  - 02조 06항. {index} 사용 시 {classname} 좌측에 "{index}\_"를 추가할 수 있다.
+  - 02조 06항. {index} 사용 시 {classname} 좌측에 "{index}\_"를 추가한다.
 
   - 02조 07항. {index} 사용 시 {filename} 좌측에 "{index}\_"를 추가한다.
 
@@ -155,19 +161,25 @@
 
   - 02조 10항. 모든 {foldername}과 {fullfilenameIE}는 "{classgroupname}\_"을 왼쪽 끝에 포함한다.
 
-  - 02조 11항. 서버 폴더의 {foldername}은 서버 운영체제에 맞게 구성한다.
+  - 02조 11항. 서버 폴더의 {foldername}은 서버 운영체제에 맞게 서버관리자가 구성한다.
+
+  - 02조 12항. {foldername}은 "{classgroupname}\_{index}\_{classname}\_{verx-x}\_{ref}"이다.
+
+    - 02조 12항 01호. {foldername}에서 "\_{index}", "\_{verx-x}", "\_{ref}"는 생략할 수 있다.
+
+  - 02조 13항. {filenameIE}는 "{filename}\_{verx-x}\_{ref}.{ext}"이다.
+
+    - 02조 13항 01호. "\_{verx-x}", "\_{ref}"가 사용되지 않은 경우에만 {filenameIE}에서 "\_{verx-x}", "\_{ref}"는 각각 사용되지 않은 요소에 상응하여 생략된다.
+
+  - 02조 14항. {fullfilenameIE}는 "{classgroupname}\_{index}\_{filenameIE}"이다.
+
+    - 02조 14항 01호. "\_{index}"가 사용되지 않은 경우에만 {fullfilenameIE}에서 "\_{index}"는 생략된다.
+
+  - 02조 15항. {classgroupname}은 "{default}\_{class01}\_{class02}\_{class03}..."이다.
 
 - 제 03조. 세부사항
 
-  - 03조 01항. {classgroupname}은 상위폴더의 {ref}를 제외한 {classgroupname}을 포함한다.
-
-  - 03조 02항. 파일명은 {classgroupname}_{file.xxx}으로 구성된다.
-
-    - 03조 02항 01호. 파일에 버전구분이 필요할 시 {file.xxx}는 "file\_{verx-x}.xxx"로 대체할 수 있다.
-
-    - 03조 02항 02호. {verx-x}와 {ref} 모두 사용될 시 {file.xxx}는 "file\_{verx-x}\_{ref}.xxx" 형식으로 대체할 수 있다.
-
-    - 03조 02항 03호. 파생결과로 생성되는 파일은 {classgroupname}은 파생 원인 파일의 {filename}로 대체할 수 있다.
+  - 03조 01항. 의존성이 강한 파일 중 하위 의존성을 가진 파일은 {classgroupname}은 파생 원인 파일의 {filename}로 대체할 수 있다.
 
     - 03조 02항 04호. 03호에서 파생 결과로 생성된 파일은 상위폴더의 {classgroupname}과 파생 원인 파일의 {filename}을 포함하는 {classgroupname}의 폴더의 하위에서 관리할 수 있다.
 
