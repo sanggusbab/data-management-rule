@@ -19,6 +19,5 @@
 
 파일명		= {fullfilenameIE}	= {classgroupname}_{index}_{filename}_{verx-x}_{ref}.{ext}
 
-(예외)
-서버 only has {classname} but {classgroupname}
-서버 하위로부터 {classgroupname} 참조시에만 {foldername} <= {classname} 할당
+서버는 하위로부터 참조되는 {classgroupname}이 없다.
+서버 하위로부터 {classgroupname} 참조시에만 {classgroupname} <= {foldername} <= {classname} 할당
