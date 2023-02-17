@@ -25,7 +25,7 @@
 
     - 파일을 담고 있는 파일 주소 공간
 
-    - 모든 폴더는 {foldername}, {classgroupname}, classname을 갖는다.
+    - 모든 폴더는 {foldername}, {classgroupname}, {classname}을 갖는다.
 
   - 폴더명(folder code)
 
@@ -33,20 +33,20 @@
 
     - 상위폴더의 {foldername}은 {classgroupname}으로 표현된다.
 
-    - classname은 {class##}로 표현한다.
+    - {classname}은 {class##}과 같은 의미로 사용한다.
 
     - {foldername}은 "{classgroupname}\_{class##}"로 표현을 대체할 수 있다.
 
             예시
-                - {classgroupname} = {class01}_{class02}_{class03}_{class04}
-                - {foldername} = {class01}_{class02}_{class03}_{class04}_{class##}
+                - {classgroupname} = {class01}_{class02}_{class03}
+                - {foldername} = {class01}_{class02}_{class03}_{class##}
                 - {foldername} = {classgroupname}_{class##}
 
   - 서버폴더
 
     - 서버폴더의 {foldername}은 classname으로 대체한다.
 
-    - 서버폴더의 classname은 {default}로 표현한다.
+    - 서버폴더의 {classname}은 {default}로 표현한다.
 
             예시
                 - 주소 공간 = C://users/home/hands/desktop/handsdrive/
@@ -63,9 +63,13 @@
 
     - 파일명은 "full filename including extension"을 줄여 {fullfilenameIE}라 표현한다.
 
+    - 부분파일명은 "filename including extension"을 줄여 {filenameIE}라 표현한다.
+
     - 상위폴더의 {foldername}은 {classgroupname}으로 표현된다.
 
-    - {fullfilenameIE}은 {classgroupname}\_{filename}.{ext}로 표현을 대체할 수 있다.
+    - {filenameIE}는 {filename}.{ext}로 표현을 대체할 수 있다.
+
+    - {fullfilenameIE}는 {classgroupname}\_{filename}.{ext}로 표현을 대체할 수 있다.
 
   - 버전 (version code)
 
@@ -123,11 +127,14 @@
   - 01조 05항. 규정에 어긋나는 데이터는 강제로 수정될 수 있다.
   - 01조 06항. "협의체"는 데이터 사용자들의 규정 숙지 능력을 제고하기 위해 노력한다.
   - 01조 07항. "데이터 관리 규정"은 쉽게 공개될 수 있는 장소에 게시한다.
-  - 01조 08항. "협의체"에서 데이터 읽기 또는 쓰기 권한이 있는 계정은 1년에 최소 1회 비밀번호를 갱신하고, 변경 내용 히스토리를 최소한의 인원만 열람가능한 데이터 서버에 저장한다.
-  - 01조 09항. 서버관리자는 서버를 신설할 때, 최소 1개의 디렉토리에 대해 로컬에서 읽기가 가능한 everyone 계정을 생성하고, 아이디와 비밀번호를 쉽게 공개될 수 있는 장소에 게시한다.
+  - 01조 08항. "협의체"에서 데이터 읽기 또는 쓰기 권한이 있는 계정은 1년에 최소 1회 비밀번호를 갱신한다.
+    - 01조 08항 01호. 계정 변경 내용 히스토리를 최소한의 인원만 열람가능한 데이터 서버에 저장한다.
+    - 01조 08항 02호. 계정 변경 전에 미리 변경 후 열람 권한자들에게 수정 소식을 알릴 계획을 세운다.
+  - 01조 09항. 서버관리자는 서버를 신설할 때, 로컬에서 최소 1개 이상의 디렉토리에 대해 접근 가능한 공개 계정 everyone 계정을 생성한다. 해당 계정의 아이디, 비밀번호, 접속방법을 쉽게 접근할 수 있는 장소에 게시한다.
   - 01조 10항. 개인정보와 관련된 내용은 최대한 공개되지 않도록 한다.
   - 01조 11항. HandS의 참여의 자율성과 책임의식 및 창의성 제고를 위해 공개 가능한 정보는 최대한의 범위로 공개를 한다.
   - 01조 12항. 모든 데이터 관리 장치는 물리적인 접근이 통제된 신뢰성이 높은 공간에 설치한다.
+  - 01조 13항. 규정의 개정이 의결될 시, "협의체는" 해당 규정의 실질적 적용 계획과 규정이 정착될 수 있는 교육 및 개정안 배포 계획을 수립한다.
 - 제 02조. 기본시항
   - 02조 01항. {default} = "HS"이다.
   - 02조 02항. 폴더명 가장 우측에 "\_{ref}"를 추가할 수 있다.
