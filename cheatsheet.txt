@@ -1,0 +1,16 @@
+폴더
+	폴더명 => classname = {classgroupname}_{class##}
+
+서버폴더
+	서버폴더 only has {class##} but {classgroupname}, {foldername}
+
+classname = {class##}
+{classgroupname} = {class01}_{class02}_{class03}_{class04}
+
+파일	파일명 => filename = {file.xxx} = {filename}.{ext}
+버전 =>{verx-x}
+비고 => {ref}
+인덱스 => {index}
+
+{classgroupname}_{index}_{class##}_{verx-x}_{ref}
+{classgroupname}_{index}_{filename}_{verx-x}_{ref}.{ext}

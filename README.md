@@ -20,58 +20,94 @@
     공개범위에 맞추어 데이터를 재가공하는 데 최선을 다한다.
 
 - 언어의 정의
+
   - 폴더
+
     - 파일을 담고 있는 파일 주소 공간
-    - 모든 폴더는 classname을 갖는다.
+
+    - 모든 폴더는 {foldername}, {classgroupname}, classname을 갖는다.
+
+  - 폴더명(folder code)
+
+    - 폴더명은 {foldername}이라 표현한다.
+
+    - 상위폴더의 {foldername}은 {classgroupname}으로 표현된다.
+
+    - classname은 {class##}로 표현한다.
+
+    - {foldername}은 "{classgroupname}\_{class##}"로 표현을 대체할 수 있다.
+
+            예시
+                - {classgroupname} = {class01}_{class02}_{class03}_{class04}
+                - {foldername} = {class01}_{class02}_{class03}_{class04}_{class##}
+                - {foldername} = {classgroupname}_{class##}
+
   - 서버폴더
-    - 서버폴더의 classname은 주소공간을 대표하는 단어로 표현한다.
+
+    - 서버폴더의 {foldername}은 classname으로 대체한다.
+
+    - 서버폴더의 classname은 {default}로 표현한다.
 
             예시
-                - 주소 공간 : C://users/home/hands/desktop/handsdrive/
-                - classname : HS
-  - 폴더명
-    - classname과 언더바 "\_"로 구성된다.
-    - classname은 {class##} 형태로 대표된다.
-    - 폴더명은 {classgroupname}으로 표현을 대체할 수 있다.
+                - 주소 공간 = C://users/home/hands/desktop/handsdrive/
+                - classname = AA
+                - 서버폴더 하위폴더 {foldername} = AA_{class##}
 
-            예시
-                - {classgroupname} = {class01}\_{class02}\_{class03}\_{class04}
   - 파일
+  
     - 폴더의 가장 끝단에 존재하는 데이터
 
-  - 파일명
-    - 폴더명의 일부와 "\_"로 구성된다.
-    - 모든 파일은 filename을 포함한다.
-    - filename은 {file.xxx}라 표현한다.
-    - {file.xxx}는 {filename}.{ext}으로 대체할 수 있다.
-  - 버전
-    - 파일에 버전을 의미한다.
+    - 모든 파일은 {classgroupname}, {filename}, {ext}을 가진다.
+
+  - 파일명(file code)
+
+    - 파일명은 "full filename including extension"을 줄여 {fullfilenameIE}라 표현한다.
+
+    - 상위폴더의 {foldername}은 {classgroupname}으로 표현된다.
+
+    - {fullfilenameIE}은 {classgroupname}\_{filename}.{ext}로 표현을 대체할 수 있다.
+
+  - 버전 (version code)
+
     - 버전명은 {verx-x}라 표현한다.
-  - 비고
-    - 참조하라고 붙인 단어나 문자 또는 문장을 의미한다.
-    - 비고 형식의 classname은 {ref} 형태로 대표한다.
-  - 인덱스
-    - filename 또는 classname의 앞에 붙일 수 있는 수의 나열을 의미한다.
-    - 인덱스는 {index}로 표현한다.
+
+  - 비고 (reference code)
+
+    - 비고는 {class##} 또는 {filename} 바로 뒤에 "\_"에 이어 참조하라고 붙인 단어, 문자, 문장을 의미한다.
+
+    - 비고는 {ref}라 표현한다.
+
+  - 인덱스 (index code)
+
+    - {filename} 또는 {class##}의 앞에 "\_"에 이어 붙일 수 있는 수의 나열을 의미한다.
+
+    - 인덱스는 {index}라 표현한다.
+
     - 폴더 내 정렬 시 깔끔한 UI를 제공받을 수 있게 한다.
+
 - 전체에 대한 예시
 
-        총예시 (폴더)
-            - 주소 공간 : C://users/home/hands/desktop/handsdrive/HS_01FI_Finance
-            - {classgroupname} = HS_FI_Finance
-            - {index} = 01
-            - {class##} = FI
-            - {ref} = Finance
-            - classname = 01FI_Finance
-        총예시 (파일)
-            - 주소 공간 : C://users/home/hands/desktop/handsdrive/HS_FI_Finance/HS_FI_01FEv1-0-0_FinanceEnginfirst.exe
-            - {classgroupname} = HS_FI
-            - {index} = 01
+        폴더예시 {classgroupname}_{index}_{class##}_{verx-x}_{ref}
+            - 서버 주소 공간 = C://users/AAAsdrive/
+            - 서버 classname = AAA
+            - 현재 주소 공간 : C://users/AAAdrive/AAA_001FI_Finance/AAA_001FI_HR_20191021_HumanResource
+            - {classgroupname} = AAA_001FI
+            - {index} = None
+            - {class##} = HR
+            - verx-x = 20191021
+            - {ref} = HumanResource
+
+        파일예시 {classgroupname}_{index}_{filename}_{verx-x}_{ref}.{ext}
+            - 서버 주소 공간 = C://users/ABCsdrive/
+            - 서버 classname = BBB
+            - 파일 데이터 공간 : C://users/ABCdrive//BBB_FI_Finance/BBB_FI_001_FE_v1-0_FinanceEngine.exe
+            - {fullfilenameIE} = HS_FI_01FEv1-0-0_FinanceEnginfirst.exe
+            - {classgroupname} = BBB_FI
+            - {index} = 001
             - {filename} = FE
-            - {verx-x} = V1-0-0
+            - {verx-x} = v1-0-0
             - {ref} = FinanceEnginfirst
             - {ext} = exe
-            - 파일명 = HS_FI_01FEv1-0-0_FinanceEnginfirst.exe
 
 ---
 
@@ -99,7 +135,7 @@
         예시
             - 기존폴더명: HS_AA_BB
             - 변경폴더명: HS_AA_BB_Babo
-  - 02조 03항. {file.xxx}을 "file\_{ref}.xxx"로 대체할 수 있다.
+  - 02조 03항. {file.xxx}을 "{filename}\_{ref}.xxx"로 대체할 수 있다.
   - 02조 04항. {class##}를 "{index}\_{class##}"로 대체할 수 있다.
   - 02조 04항. {file.xxx}를 "{index}\_{file.xxx}"로 대체할 수 있다.
 - 제 03조. 세부사항
@@ -118,7 +154,7 @@
             예시
                 - 상위폴더명: HS_AA_BB_Babo
                     - 하위파일명: HS_AA_BB_MapleStoryEngine_ver03-01.exe
-    - 03조 02항 02호. {verx-x}와 {ref} 모두 사용될 시 {file.xxx}는 "file\_{verx-x}\_{ref}.xxx"로 대체할 수 있다.
+    - 03조 02항 02호. {verx-x}와 {ref} 모두 사용될 시 {file.xxx}는 "file\_{verx-x}\_{ref}.xxx" 형식으로 대체할 수 있다.
 
             예시
                 - 상위폴더명: HS_AA_BB_Babo
@@ -159,7 +195,7 @@
             - HS_AA_BB_MSE_00620230125_MapleStoryEngine.exe
             - HS_AA_BB_MSE_00720230201_MapleStoryEngine.exe
             - HS_AA_BB_MSE_00820230421_MapleStoryEngine.exe
-  - 04조 02항. 습관적으로 {ref}로서 영문을 쓰는 습관을 추천한다.
+  - 04조 02항. {ref}를 쓴다면 한글보다 영문을 쓰는 습관을 추천한다.
 
         예시
             - HS_DS_Design (추천)
@@ -169,13 +205,19 @@
 
         예시
             - 상위폴더명: HS_01AA
-                - 하위폴더명: BS_01AA_01BB
+                - 하위폴더명: HS_01AA_01BB
             - 상위폴더명: HS_02AA
-                - 하위폴더명: BS_02AA_01BB
+                - 하위폴더명: HS_02AA_01BB
         cf) 이 방법은 하위폴더의 classgroupname에도 영향을 끼칠 수 있으므로 신중히 순서를 고려해야한다.
   - 04조 05항. .zip과같은 압축파일형태의 데이터 저장은 권장하지 않는다. (접근성 저하로 인한 데이터 재사용률이 떨어진다.)
-  - 04조 06항. 중괄호 "{}"로 감싸진 부분은 코드(Code)라고 부르는 것을 추천한다.
-- 제 05조. 예외
+  - 04조 06항. 중괄호 "{}"로 감싸진 부분은 구분코드(Division Code)라고 부르는 것을 추천한다.
+  - 04조 07항. 파일명과 폴더명에 공백문자열을 쓰지 않고, 단어의 조합의 경우 단어의 제일 왼쪽 글자만 대문자로 표기함을 추천한다.
+  - 04조 08항. 상위 폴더의 {class##}과 하위 파일의 의존성 관계가 높아 상위 폴더를 옮기더라도 파위 파일들이 같이 이동될 수 있는 가능성이 높을 때, 파일명에서 "{classgroupname}\_"를 생략하는 것을 추천한다. 이는 03조 02항 04호에 의거 허용된다.
+  - 04조 09항. 기본적으로 {ref}는 {class##} 또는 {filename}를 보조설명하는 코드이지만, 의존성 관계가 확립되었다고 보는 폴더와 파일은 {class##} 또는 {filename}을 {ref}처럼 풀어쓰는 것을 추천한다.
+  - 04조 10항. 폴더명 또는 파일명을 자연스럽게 하기 위해 동일한 {class##}, {filename} 상에서 {ref}만으로 구분짓는 것을 시도 할 수 있다. 하지만 사용했다고 믿는 {ref}는 사실 {verx-x}에 해당한다.
+  - 04조 11항. 05조 03항 03호에 의거 README.txt의 {classgroupname}은 생략함을 추천한다.
+  - 05조 12항. {index} , ({class##} 또는 {filename}) , {verx-x} 사이의 "\_"는 필요에 따라 생략하게 되며 {class##} 또는 {filename}에 해석이 귀속된다.
+- 제 05조. 예외 가능 사항
   - 05조 01항. 응용프로그램 등에 의해 자동 생성되는 의존성 폴더, 파일에 한하여 예외가 허용될 수 있다.
   - 05조 02항. 폴더명과 파일명에 한글로 전달해야할 목적성이 뚜렷하다면 {filename}과 {ref}에 한글이 허용될 수 있다.
   - 05조 03항. 아래 각 호에 따라 README.txt 파일 생성하지 않는 것이 허용될 수 있다.
@@ -187,11 +229,12 @@
   - 05조 04항. 03조 02항 04호에서 하위파일(파생원인파일)이 없더라도 해당 조항 내용이 허용될 수 있다.
   - 05조 05항. 02조 04항 그리고 02조 05항에서 언급한대로 왼쪽 끝을 {index} 시작하는 classname 그리고 filename의 폴더의 하위폴더에서는 상위 폴더의 classname에서의 "{index}\_" 생략이 허용될 수 있다.
   - 05조 06항. {index}의 창의적인 삽입 기법이 있다면 협의체의 회의를 거쳐 규정을 조정한다.
-  - 05조 07항. {class##}는 되도록 짧은 코드로 사용함을 추천한다. (2글자 정도의 약어를 추천)
+  - 05조 07항. {class##}는 되도록 짧은 코드로 사용함을 추천한다. (2~4글자 정도의 약어를 추천)
   - 05조 08항. 01조 09항에서 언급한 everyone 계정의 개설은 서버의 성질에 따른 "협의체"에 의결에 따라 허용되지 않을 수 있다.
   - 05조 09항. 01조 12항에서 필요한 공간이 비용적 또는 행정적인 등의 문제로 마련이 되기 힘든 경우에 임시적인 조치로 물리적인 접근이 가능한 공간에 두는 것이 허용될 수 있다.
     - 05조 09항 01호. 물리적인 접근이 가능한 공간에 둘 경우 만일의 사태를 대비하여 클라우드 서비스와 연동하여 백업 서버를 마련한다.
     - 05조 09항 02호. 위의 각 호와는 별도로 사건 및 사고를 예방하고, 적절한 추후 조치를 결정하기 위해 영상 기록 장치의 촬영 또는 기타 출입 관리 기기 등과 같은 설치물이 있는 장소에 둔다.
+  - 05조 10항. {RVS}, {verx-x} 이 둘과 {index}는 기본 이념이 명백히 다르지만 둘 모두 폴더 또는 파일을 구분짓는 용도로는 혼용하여 사용함이 허용될수 있다.
 
 ## 데이터
 
