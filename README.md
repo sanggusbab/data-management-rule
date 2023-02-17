@@ -23,7 +23,7 @@
 
   - 폴더
 
-    - 파일을 담고 있는 파일 주소 공간
+    - 데이터를 담을 수 있는 주소 공간
 
     - 모든 폴더는 {foldername}, {classgroupname}, {classname}을 갖는다.
 
@@ -31,11 +31,15 @@
 
     - 폴더명은 {foldername}이라 표현한다.
 
-    - 상위폴더의 {foldername}은 {classgroupname}으로 표현된다.
+    - 일반적으로 상위폴더의 {foldername}은 {classgroupname}으로 표현된다. 세부 사항은 규정에서 다룬다.
 
-    - {classname}은 {class##}과 의미가 등가하다.
+    - {classname}은 {class##}과 의미가 등가하다. "##"는 다른 문자로 대체될 수 있는 부분을 말한다.
 
-    - {foldername}은 "{classgroupname}\_{class##}"로 표현을 대체할 수 있다.
+    - {foldername}은 "{classgroupname}\_{classname}"과 의미가 등가하다.
+
+  - 서버
+
+    - 데이터를 포함하고 데이터에 접근할 수 있게 하는 장치 제반를 말한다.
 
   - 서버폴더
 
@@ -55,25 +59,29 @@
 
     - 부분파일명은 "filename including extension"을 줄여 {filenameIE}라 표현한다.
 
-    - 상위폴더의 {foldername}은 {classgroupname}으로 표현된다.
+    - 파일명을 의미적으로 내포하는 부분을 {filename}이라 표현한다.
 
-    - {filenameIE}는 {filename}.{ext}로 표현을 대체할 수 있다.
+    - 파일의 확장자는 {ext}라 표현한다.
 
-    - {fullfilenameIE}는 {classgroupname}\_{filename}.{ext}로 표현을 대체할 수 있다.
+    - 일반적으로 상위폴더의 {foldername}은 {classgroupname}으로 표현된다. 세부 사항은 규정에서 다룬다.
+
+    - {filenameIE}는 {filename}.{ext}와 의미가 등가이다.
+
+    - {fullfilenameIE}는 {classgroupname}\_{filename}.{ext}와 의미가 등가이다.
 
   - 버전 (version code)
 
     - 버전명은 {verx-x}라 표현한다.
 
-  - 비고 (reference code)
+    - 대용
 
-    - 비고는 {classname} 또는 {filename} 오른쪽에 "\_"에 이어 참조하라고 붙인 단어, 문자, 문장을 의미한다.
+  - 비고 (reference code)
 
     - 비고는 {ref}라 표현한다.
 
-  - 인덱스 (index code)
+    - 데이터의 메타데이터로서 색인이나 직관적인 이해에 도움을 준다.
 
-    - {filename} 또는 {classname}의 왼쪽에 "\_"에 이어 붙일 수 있는 수의 나열을 의미한다.
+  - 인덱스 (index code)
 
     - 인덱스는 {index}라 표현한다.
 
@@ -139,13 +147,13 @@
 
   - 02조 07항. {index} 사용 시 {filename} 좌측에 "{index}\_"를 추가한다.
 
-  - 02조 08항. {classgroupname}은 상위 폴더의 {foldername}에서 "{index}\_", "_{verx-x}\_"가 제거된 문자열이다.
+  - 02조 08항. {classgroupname}은 상위 폴더의 {foldername}에서 "{index}\_", "\_{verx-x}", "\_{ref}"가 제거된 문자열이다.
 
   - 02조 09항. {index}는 수의 나열로 된 문자열이다.
 
   - 02조 10항. 모든 {foldername}과 {fullfilenameIE}는 "{classgroupname}\_"을 왼쪽 끝에 포함한다.
 
-  - 02조 11항. 서버 폴더의 {foldername}은 운영체제에 맞게 구성한다.
+  - 02조 11항. 서버 폴더의 {foldername}은 서버 운영체제에 맞게 구성한다.
 
 - 제 03조. 세부사항
 
