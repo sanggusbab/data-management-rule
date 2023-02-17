@@ -37,21 +37,11 @@
 
     - {foldername}은 "{classgroupname}\_{class##}"로 표현을 대체할 수 있다.
 
-            예시
-                - {classgroupname} = {class01}_{class02}_{class03}
-                - {foldername} = {class01}_{class02}_{class03}_{class##}
-                - {foldername} = {classgroupname}_{classname}
-
   - 서버폴더
 
     - 서버폴더의 {classname}은 {default}로 표현한다.
 
     - 서버폴더의 {foldername}은 {default}로 대체한다.
-
-            예시
-                - 주소 공간 = C://users/home/hands/desktop/handsdrive/
-                - {classname} = AA
-                - 서버폴더 하위폴더의 {foldername} = AA_{class}
 
   - 파일
   
@@ -89,132 +79,80 @@
 
     - 폴더 내 정렬 시 깔끔한 UI를 제공받을 수 있게 한다.
 
-- 전체에 대한 예시
-
-        폴더예시 {classgroupname}_{index}_{class##}_{verx-x}_{ref}
-            - 서버 주소 공간 = C://users/AAAsdrive/
-            - 서버 classname = AAA
-            - 현재 주소 공간 : C://users/AAAdrive/AAA_001FI_Finance/AAA_001FI_HR_20191021_HumanResource
-            - {classgroupname} = AAA_001FI
-            - {index} = None
-            - {class##} = HR
-            - verx-x = 20191021
-            - {ref} = HumanResource
-
-        파일예시 {classgroupname}_{index}_{filename}_{verx-x}_{ref}.{ext}
-            - 서버 주소 공간 = C://users/ABCsdrive/
-            - 서버 classname = BBB
-            - 파일 데이터 공간 : C://users/ABCdrive//BBB_FI_Finance/BBB_FI_001_FE_v1-0_FinanceEngine.exe
-            - {fullfilenameIE} = HS_FI_01FEv1-0-0_FinanceEnginfirst.exe
-            - {classgroupname} = BBB_FI
-            - {index} = 001
-            - {filename} = FE
-            - {verx-x} = v1-0-0
-            - {ref} = FinanceEnginfirst
-            - {ext} = exe
-
 ---
 
 ## 규정
 
 - 제 01조. 협의
-  - 01조 01항. 데이터 구조에 대한 모든 제반 사항은 "HandS 데이터 구조 협의체"(이하 "협의체")에 의해 결정된다.
-  - 01조 02항. "협의체"는 회장과 서버관리자를 포함한 임원진 총 3인 이상으로 구성한다.
-    - 01조 02항 01호. "협의체" 구성원은 회장이 선정한다.
-  - 01조 03항. "협의체"에 발의 가능한 자는 HandS임원진으로 한정한다.
-  - 01조 04항. "협의체"는 매년 1회 이상의 "데이터 구조에 대한 회의"(이하 "회의")를 주최하여 규정을 조정한다.
-    - 01조 03항 01호. 규정의 조정으로는 "협의체"의 만장일치로 통과한 안건만 반영이 가능하다.
-  - 01조 05항. 규정에 어긋나는 데이터는 강제로 수정될 수 있다.
-  - 01조 06항. "협의체"는 데이터 사용자들의 규정 숙지 능력을 제고하기 위해 노력한다.
-  - 01조 07항. "데이터 관리 규정"은 쉽게 공개될 수 있는 장소에 게시한다.
-  - 01조 08항. "협의체"에서 데이터 읽기 또는 쓰기 권한이 있는 계정은 1년에 최소 1회 비밀번호를 갱신한다.
-    - 01조 08항 01호. 계정 변경 내용 히스토리를 최소한의 인원만 열람가능한 데이터 서버에 저장한다.
-    - 01조 08항 02호. 계정 변경 전에 미리 변경 후 열람 권한자들에게 수정 소식을 알릴 계획을 세운다.
-  - 01조 09항. 서버관리자는 서버를 신설할 때, 로컬에서 최소 1개 이상의 디렉토리에 대해 접근 가능한 공개 계정 everyone 계정을 생성한다. 해당 계정의 아이디, 비밀번호, 접속방법을 쉽게 접근할 수 있는 장소에 게시한다.
-  - 01조 10항. 개인정보와 관련된 내용은 최대한 공개되지 않도록 한다.
-  - 01조 11항. HandS의 참여의 자율성과 책임의식 및 창의성 제고를 위해 공개 가능한 정보는 최대한의 범위로 공개를 한다.
-  - 01조 12항. 모든 데이터 관리 장치는 물리적인 접근이 통제된 신뢰성이 높은 공간에 설치한다.
-  - 01조 13항. 규정의 개정이 의결될 시, "협의체는" 해당 규정의 실질적 적용 계획과 규정이 정착될 수 있는 교육 및 개정안 배포 계획을 수립한다.
-- 제 02조. 기본시항
-  - 02조 01항. {default} = "HS"이다.
-  - 02조 02항. 폴더명 가장 우측에 "\_{ref}"를 추가할 수 있다.
 
-        예시
-            - 기존폴더명: HS_AA_BB
-            - 변경폴더명: HS_AA_BB_Babo
-  - 02조 03항. {file.xxx}을 "{filename}\_{ref}.xxx"로 대체할 수 있다.
-  - 02조 04항. {class##}를 "{index}\_{class##}"로 대체할 수 있다.
-  - 02조 04항. {file.xxx}를 "{index}\_{file.xxx}"로 대체할 수 있다.
+  - 01조 01항. 데이터 구조에 대한 모든 제반 사항은 "HandS 데이터 구조 협의체"(이하 "협의체")에 의해 결정된다.
+
+  - 01조 02항. "협의체"는 회장과 서버관리자를 포함한 임원진 총 3인 이상으로 구성한다.
+
+    - 01조 02항 01호. "협의체" 구성원은 회장이 선정한다.
+
+  - 01조 03항. "협의체"에 발의 가능한 자는 HandS임원진으로 한정한다.
+
+  - 01조 04항. "협의체"는 매년 1회 이상의 "데이터 구조에 대한 회의"(이하 "회의")를 주최하여 규정을 조정한다.
+
+    - 01조 03항 01호. 규정의 조정으로는 "협의체"의 만장일치로 통과한 안건만 반영이 가능하다.
+
+  - 01조 05항. 규정에 어긋나는 데이터는 강제로 수정될 수 있다.
+
+  - 01조 06항. "협의체"는 데이터 사용자들의 규정 숙지 능력을 제고하기 위해 노력한다.
+
+  - 01조 07항. "데이터 관리 규정"은 쉽게 공개될 수 있는 장소에 게시한다.
+
+  - 01조 08항. "협의체"에서 데이터 읽기 또는 쓰기 권한이 있는 계정은 1년에 최소 1회 비밀번호를 갱신한다.
+
+    - 01조 08항 01호. 계정 변경 내용 히스토리를 최소한의 인원만 열람가능한 데이터 서버에 저장한다.
+
+    - 01조 08항 02호. 계정 변경 전에 미리 변경 후 열람 권한자들에게 수정 소식을 알릴 계획을 세운다.
+
+  - 01조 09항. 서버관리자는 서버를 신설할 때, 로컬에서 최소 1개 이상의 디렉토리에 대해 접근 가능한 everyone 계정을 생성한다. 해당 계정의 아이디, 비밀번호, 접속방법을 쉽게 접근할 수 있는 장소에 게시한다.
+
+  - 01조 10항. 개인정보와 관련된 내용은 최대한 공개되지 않도록 한다.
+
+  - 01조 11항. HandS의 참여의 자율성과 책임의식 및 창의성 제고를 위해 공개 가능한 정보는 최대한의 범위로 공개를 한다.
+
+  - 01조 12항. 모든 데이터 관리 장치는 물리적인 접근이 통제된 신뢰성이 높은 공간에 설치한다.
+
+  - 01조 13항. 규정의 개정이 의결될 시, "협의체는" 해당 규정의 실질적 적용 계획과 규정이 정착될 수 있는 교육 및 개정안 배포 계획을 수립한다.
+
+- 제 02조. 기본시항
+
+  - 02조 01항. {default} = "HS"이다.
+
+  - 02조 02항. {ref} 사용 시 {classname} 우측에 "\_{ref}"를 추가한다.
+
+  - 02조 03항. {ref} 사용 시 {filename} 우측에 "\_{ref}"를 추가한다.
+
+  - 02조 04항. {verx-x} 사용 시 {classname} 우측에 "\_{verx-x}"를 추가한다.
+
+    - 02조 04항 1호. {verx-x}와 {ref} 모두 사용 시 {classname} 우측에 "\_{verx-x}\_{ref}"를 추가한다.
+
+  - 02조 05항. {verx-x} 사용 시 {filename} 우측에 "\_{verx-x}"를 추가한다.
+
+    - 02조 05항 1호. {verx-x}와 {ref} 모두 사용 시 {filename} 우측에 "\_{verx-x}\_{ref}"를 추가한다.
+
+  - 02조 06항. {classname} 좌측에 "{index}\_"를 추가할 수 있다.
+
+  - 02조 07항. {file.xxx}를 "{index}\_{file.xxx}"로 대체할 수 있다.
+
 - 제 03조. 세부사항
   - 03조 01항. {classgroupname}은 상위폴더의 {ref}를 제외한 {classgroupname}을 포함한다.
-
-        예시
-            - 상위폴더명: HS_AA_BB_Babo
-                - 하위폴더명: HS_AA_BB_CC_Cocaine
   - 03조 02항. 파일명은 {classgroupname}_{file.xxx}으로 구성된다.
-
-        예시
-            - 상위폴더명: HS_AA_BB_Babo
-                - 하위파일명: HS_AA_BB_MapleStoryEngine.exe
     - 03조 02항 01호. 파일에 버전구분이 필요할 시 {file.xxx}는 "file\_{verx-x}.xxx"로 대체할 수 있다.
-
-            예시
-                - 상위폴더명: HS_AA_BB_Babo
-                    - 하위파일명: HS_AA_BB_MapleStoryEngine_ver03-01.exe
     - 03조 02항 02호. {verx-x}와 {ref} 모두 사용될 시 {file.xxx}는 "file\_{verx-x}\_{ref}.xxx" 형식으로 대체할 수 있다.
-
-            예시
-                - 상위폴더명: HS_AA_BB_Babo
-                    - 하위파일명: HS_AA_BB_MSE_ver03-01_MapleStoryEngine.exe
     - 03조 02항 03호. 파생결과로 생성되는 파일은 {classgroupname}은 파생 원인 파일의 {filename}로 대체할 수 있다.
-
-            예시
-                - 상위폴더명: HS_AA_BB_Babo
-                    - 하위파일명(파생원인파일): HS_AA_BB_MSE_ver03-01_MapleStoryEngine.exe
-                    - 파생결과파일01: MSE_movement.c
-                    - 파생결과파일02: MSE_main.c
-                    - 파생결과파일02: MSE_README.md
     - 03조 02항 04호. 03호에서 파생 결과로 생성된 파일은 상위폴더의 {classgroupname}과 파생 원인 파일의 {filename}을 포함하는 {classgroupname}의 폴더의 하위에서 관리할 수 있다.
-
-            예시
-                - 상위폴더명: HS_AA_BB_Babo
-                    - 하위파일명(파생원인파일): HS_AA_BB_MSE_ver03-01_MapleStoryEngine.exe
-                    - 하위폴더명(파생파일모음폴더): HS_AA_BB_MSE
-                        - 파생결과파일01: MSE_movement.c
-                        - 파생결과파일02: MSE_main.c
-                        - 파생결과파일02: MSE_README.md
   - 03조 03항. 폴더명과 파일명은 영문, 숫자, "_"로 구성된 문장만을 사용한다.
   - 03조 04항. 모든 폴더는 각 폴더의 목적을 담은 README.txt 파일을 포함한다.
 - 제 04조. 추천
   - 04조 01항. {verx-x}로서 {RVS}{YYYY}{MM}{DD} 아래 보조 설명에서 언급된 글자수를 맞추어 날짜 형식을 쓰는걸 추천한다.
-
-        보조 설명
-            - {RVS} : RevisionCode : 유사파일 간의 개정순번 매길 때 사용한다. (3글자)
-            - {YYYY} : YearCode : 년도를 나타낼 때 사용한다. (4글자)
-            - {MM} : MonthCode : 월을 나타낼 때 사용한다. (2글자)
-            - {DD} : DayCode : 일을 나타낼 때 사용한다. (2글자)
-        예시
-            - HS_AA_BB_MSE_00120230101_MapleStoryEngine.exe
-            - HS_AA_BB_MSE_00220230101_MapleStoryEngine.exe
-            - HS_AA_BB_MSE_00320230103_MapleStoryEngine.exe
-            - HS_AA_BB_MSE_00420230107_MapleStoryEngine.exe
-            - HS_AA_BB_MSE_00520230112_MapleStoryEngine.exe
-            - HS_AA_BB_MSE_00620230125_MapleStoryEngine.exe
-            - HS_AA_BB_MSE_00720230201_MapleStoryEngine.exe
-            - HS_AA_BB_MSE_00820230421_MapleStoryEngine.exe
   - 04조 02항. {ref}를 쓴다면 한글보다 영문을 쓰는 습관을 추천한다.
-
-        예시
-            - HS_DS_Design (추천)
-            - HS_DS_디자인부서 (비추천)
   - 04조 03항. 파일의 모듈러 방식의 관리를 추천하며 이를 가장 잘 반영한 모델은 03조 02항 04호의 예시에 해당한다.
   - 04조 04항. 폴더에서 정렬 기능을 유용히 사용하려면 classname 왼쪽 끝을 {index}로 시작하는 것을 추천한다.
-
-        예시
-            - 상위폴더명: HS_01AA
-                - 하위폴더명: HS_01AA_01BB
-            - 상위폴더명: HS_02AA
-                - 하위폴더명: HS_02AA_01BB
         cf) 이 방법은 하위폴더의 classgroupname에도 영향을 끼칠 수 있으므로 신중히 순서를 고려해야한다.
   - 04조 05항. .zip과같은 압축파일형태의 데이터 저장은 권장하지 않는다. (접근성 저하로 인한 데이터 재사용률이 떨어진다.)
   - 04조 06항. 중괄호 "{}"로 감싸진 부분은 구분코드(Division Code)라고 부르는 것을 추천한다.
@@ -242,6 +180,100 @@
     - 05조 09항 01호. 물리적인 접근이 가능한 공간에 둘 경우 만일의 사태를 대비하여 클라우드 서비스와 연동하여 백업 서버를 마련한다.
     - 05조 09항 02호. 위의 각 호와는 별도로 사건 및 사고를 예방하고, 적절한 추후 조치를 결정하기 위해 영상 기록 장치의 촬영 또는 기타 출입 관리 기기 등과 같은 설치물이 있는 장소에 둔다.
   - 05조 10항. {RVS}, {verx-x} 이 둘과 {index}는 기본 이념이 명백히 다르지만 둘 모두 폴더 또는 파일을 구분짓는 용도로는 혼용하여 사용함이 허용될수 있다.
+
+### 전반적인 예시
+
+        예시 : 폴더 기본
+            - {classgroupname} = {class01}_{class02}_{class03}
+            - {foldername} = {class01}_{class02}_{class03}_{class##}
+            - {foldername} = {classgroupname}_{classname}
+
+        예시 : 서버폴더
+            - 주소 공간 = C://users/home/hands/desktop/handsdrive/
+            - {classname} = AA
+            - 서버폴더 하위폴더의 {foldername} = AA_{class}
+
+        예시 :  {classgroupname}_{index}_{class##}_{verx-x}_{ref}
+            - 서버 주소 공간 = C://users/AAAsdrive/
+            - 서버 classname = AAA
+            - 현재 주소 공간 : C://users/AAAdrive/AAA_001FI_Finance/AAA_001FI_HR_20191021_HumanResource
+            - {classgroupname} = AAA_001FI
+            - {index} = None
+            - {class##} = HR
+            - verx-x = 20191021
+            - {ref} = HumanResource
+
+        예시 : {classgroupname}_{index}_{filename}_{verx-x}_{ref}.{ext}
+            - 서버 주소 공간 = C://users/ABCsdrive/
+            - 서버 classname = BBB
+            - 파일 데이터 공간 : C://users/ABCdrive//BBB_FI_Finance/BBB_FI_001_FE_v1-0_FinanceEngine.exe
+            - {fullfilenameIE} = HS_FI_01FEv1-0-0_FinanceEnginfirst.exe
+            - {classgroupname} = BBB_FI
+            - {index} = 001
+            - {filename} = FE
+            - {verx-x} = v1-0-0
+            - {ref} = FinanceEnginfirst
+            - {ext} = exe
+
+        예시 : {ref}
+            - 기존폴더명: HS_AA_BB
+            - 변경폴더명: HS_AA_BB_Babo
+
+        예시 : {folder}
+            - 상위폴더명: HS_AA_BB_Babo
+                - 하위폴더명: HS_AA_BB_CC_Cocaine
+
+        예시 : {file}
+            - 상위폴더명: HS_AA_BB_Babo
+                - 하위파일명: HS_AA_BB_MapleStoryEngine.exe
+
+        예시 : {verx-x}
+            - 상위폴더명: HS_AA_BB_Babo
+                - 하위파일명: HS_AA_BB_MapleStoryEngine_ver03-01.exe
+
+        예시 : {verx-x} + {ref}
+            - 상위폴더명: HS_AA_BB_Babo
+                - 하위파일명: HS_AA_BB_MSE_ver03-01_MapleStoryEngine.exe
+
+        예시 : derivated file
+            - 상위폴더명: HS_AA_BB_Babo
+                - 하위파일명(파생원인파일): HS_AA_BB_MSE_ver03-01_MapleStoryEngine.exe
+                - 파생결과파일01: MSE_movement.c
+                - 파생결과파일02: MSE_main.c
+                - 파생결과파일02: MSE_README.md
+
+        예시 : derivatied file in folder
+            - 상위폴더명: HS_AA_BB_Babo
+                - 하위파일명(파생원인파일): HS_AA_BB_MSE_ver03-01_MapleStoryEngine.exe
+                - 하위폴더명(파생파일모음폴더): HS_AA_BB_MSE
+                    - 파생결과파일01: MSE_movement.c
+                    - 파생결과파일02: MSE_main.c
+                    - 파생결과파일02: MSE_README.md
+
+        {verx-x} : 보조 설명
+            - {RVS} : RevisionCode : 유사파일 간의 개정순번 매길 때 사용한다. (3글자)
+            - {YYYY} : YearCode : 년도를 나타낼 때 사용한다. (4글자)
+            - {MM} : MonthCode : 월을 나타낼 때 사용한다. (2글자)
+            - {DD} : DayCode : 일을 나타낼 때 사용한다. (2글자)
+        예시 : {RVS}{YYYY}{MMMM}{DD}
+            - HS_AA_BB_MSE_00120230101_MapleStoryEngine.exe
+            - HS_AA_BB_MSE_00220230101_MapleStoryEngine.exe
+            - HS_AA_BB_MSE_00320230103_MapleStoryEngine.exe
+            - HS_AA_BB_MSE_00420230107_MapleStoryEngine.exe
+            - HS_AA_BB_MSE_00520230112_MapleStoryEngine.exe
+            - HS_AA_BB_MSE_00620230125_MapleStoryEngine.exe
+            - HS_AA_BB_MSE_00720230201_MapleStoryEngine.exe
+            - HS_AA_BB_MSE_00820230421_MapleStoryEngine.exe
+
+        예시 : english character recommanded
+            - HS_DS_Design (추천)
+            - HS_DS_디자인부서 (비추천)
+
+        예시 : {index}
+            - 상위폴더명: HS_01_AA (index : 01)
+                - 하위폴더명: HS_AA_01BB
+            - 상위폴더명: HS_02AA (index : None)
+                - 하위폴더명: HS_02AA_01CC
 
 ## 데이터
 
