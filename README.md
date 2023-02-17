@@ -40,18 +40,18 @@
             예시
                 - {classgroupname} = {class01}_{class02}_{class03}
                 - {foldername} = {class01}_{class02}_{class03}_{class##}
-                - {foldername} = {classgroupname}_{class##}
+                - {foldername} = {classgroupname}_{classname}
 
   - 서버폴더
 
-    - 서버폴더의 {foldername}은 {classname}으로 대체한다.
-
     - 서버폴더의 {classname}은 {default}로 표현한다.
+
+    - 서버폴더의 {foldername}은 {default}로 대체한다.
 
             예시
                 - 주소 공간 = C://users/home/hands/desktop/handsdrive/
-                - classname = AA
-                - 서버폴더 하위폴더의 {foldername} = AA_{class##}
+                - {classname} = AA
+                - 서버폴더 하위폴더의 {foldername} = AA_{class}
 
   - 파일
   
@@ -77,13 +77,13 @@
 
   - 비고 (reference code)
 
-    - 비고는 {class##} 또는 {filename} 바로 뒤에 "\_"에 이어 참조하라고 붙인 단어, 문자, 문장을 의미한다.
+    - 비고는 {classname} 또는 {filename} 오른쪽에 "\_"에 이어 참조하라고 붙인 단어, 문자, 문장을 의미한다.
 
     - 비고는 {ref}라 표현한다.
 
   - 인덱스 (index code)
 
-    - {filename} 또는 {class##}의 앞에 "\_"에 이어 붙일 수 있는 수의 나열을 의미한다.
+    - {filename} 또는 {classname}의 왼쪽에 "\_"에 이어 붙일 수 있는 수의 나열을 의미한다.
 
     - 인덱스는 {index}라 표현한다.
 
