@@ -1,8 +1,12 @@
 {classname} 	= {class##}
-{classgroupname} 	= {class01}_{class02}_{class03}_...
 
-폴더명 		= {foldername}	= {classgroupname}_{class##}
-{classgroupname} 	= 상위폴더의 {foldername}
+서버{foldername}	= {default} = 서버{classname}
+
+{classgroupname} 	= {default}_{class02}_{class03}_{index}_{class##}_{verx-x}_{ref}	= 상위폴더의 {foldername}
+
+{classname}	= {class##}
+
+{foldername}	= {classgroupname}_{index}_{classname}_{verx-x}_{ref}
 
 부분파일명	= {filenameIE}	= {filename}.{ext}
 파일명 		= {fullfilenameIE}	= {classgroupname}_{filenameIE}
@@ -11,8 +15,8 @@
 비고 		= {ref}
 인덱스 		= {index}
 
-{foldername}	= {classgroupname}_{index}_{class##}_{verx-x}_{ref}
-{fullfilenameIE}	= {classgroupname}_{index}_{filename}_{verx-x}_{ref}.{ext}
+
+파일명		= {fullfilenameIE}	= {classgroupname}_{index}_{filename}_{verx-x}_{ref}.{ext}
 
 (예외)
 서버폴더 only has {classname} but {classgroupname}, {foldername}

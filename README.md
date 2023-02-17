@@ -31,11 +31,11 @@
 
     - 폴더명은 {foldername}이라 표현한다.
 
+    - {classname}은 {foldername}의 가장 오른쪽에 위치한 {class##}과 의미가 같다. "##"는 다른 문자로 대체될 수 있는 부분이다.
+
     - 일반적으로 상위폴더의 {foldername}은 {classgroupname}으로 표현된다. 세부 사항은 규정에서 다룬다.
 
-    - {classname}은 {class##}과 의미가 같다. "##"는 다른 문자로 대체될 수 있는 부분을 말한다.
-
-    - {foldername}은 "{classgroupname}\_{classname}"과 의미가 같다.
+    - 일반적으로 {foldername}은 "{classgroupname}\_{classname}"으로 표현된다. 세부 사항은 규정에서 다룬다.
 
   - 서버
 
@@ -59,15 +59,15 @@
 
     - 부분파일명은 "filename including extension"을 줄여 {filenameIE}라 표현한다.
 
-    - 파일명을 의미적으로 내포하는 부분을 {filename}이라 표현한다.
+    - 파일의 내용을 적절히 표현하는 문자열을 {filename}이라 표현한다.
 
     - 파일의 확장자는 {ext}라 표현한다.
 
     - 일반적으로 상위폴더의 {foldername}은 {classgroupname}으로 표현된다. 세부 사항은 규정에서 다룬다.
 
-    - {filenameIE}는 {filename}.{ext}와 의미가 같다.
+    - 일반적으로 {filenameIE}는 {filename}.{ext}으로 표현된다. 세부 사항은 규정에서 다룬다.
 
-    - {fullfilenameIE}는 {classgroupname}\_{filename}.{ext}와 의미가 같다.
+    - 일반적으로 {fullfilenameIE}는 {classgroupname}\_{filename}.{ext}으로 표현된다. 세부 사항은 규정에서 다룬다.
 
   - 버전 (version code)
 
@@ -137,11 +137,11 @@
 
   - 02조 03항. {ref} 사용 시 {filename} 우측에 "\_{ref}"를 추가한다.
 
-  - 02조 04항. {verx-x} 사용 시 {classname} 우측에 "\_{verx-x}"를 추가한다.
+  - 02조 04항. {ref} 없이 {verx-x}만 사용되는 {foldername}은 불가능하다.
 
     - 02조 04항 1호. {verx-x}와 {ref} 모두 사용 시 {classname} 우측에 "\_{verx-x}\_{ref}"를 추가한다.
 
-  - 02조 05항. {verx-x} 사용 시 {filename} 우측에 "\_{verx-x}"를 추가한다.
+  - 02조 05항. {ref} 없이 {verx-x}만 사용되는 {fullfilenameIE}은 불가능하다.
 
     - 02조 05항 1호. {verx-x}와 {ref} 모두 사용 시 {filename} 우측에 "\_{verx-x}\_{ref}"를 추가한다.
 
