@@ -33,7 +33,7 @@
 
     - 상위폴더의 {foldername}은 {classgroupname}으로 표현된다.
 
-    - {classname}은 {class##}과 같은 의미로 사용한다.
+    - {classname}은 {class##}과 의미가 등가하다.
 
     - {foldername}은 "{classgroupname}\_{class##}"로 표현을 대체할 수 있다.
 
@@ -44,14 +44,14 @@
 
   - 서버폴더
 
-    - 서버폴더의 {foldername}은 classname으로 대체한다.
+    - 서버폴더의 {foldername}은 {classname}으로 대체한다.
 
     - 서버폴더의 {classname}은 {default}로 표현한다.
 
             예시
                 - 주소 공간 = C://users/home/hands/desktop/handsdrive/
                 - classname = AA
-                - 서버폴더 하위폴더 {foldername} = AA_{class##}
+                - 서버폴더 하위폴더의 {foldername} = AA_{class##}
 
   - 파일
   
