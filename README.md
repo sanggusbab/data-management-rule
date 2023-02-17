@@ -1,5 +1,22 @@
 # 데이터 관리 규정(DataManageRule)
 
+@copyright
+
+    New Engineering Hall-109, 145, Anam-ro, Seongbuk-gu, Seoul, Republic of Korea
+    All contents made from HandS are coopyright of HandS, Copyright © HandS. All rights reserved.
+
+    Any redistribution or reproduction of part or all of the contents in any form is prohibited other than the following:
+      You may print or download to a local disk extracts for your personal and non-commercial use only.
+      You may copy the content to individual third parties for their personal use, but only if you acknowledge the server as the source of the material.
+
+    You may not, except with our express written permission, distribute or commercially exploit the content.
+    Nor may you transmit it or store it in any other website or other form of electronic retrieval system.
+
+    2023 Server Administrator
+    Sang Min, Lee
+    Mobile. +82-10-2846-2327
+    Email. sanggusbab@gmail.com
+
 ## 서문
 
     HandS는 관리 효율성과 사용자 권리 인식을 제고하기 위해 아래와 같은 방식으로 데이터 관리방식을 규정한다.
@@ -147,6 +164,28 @@
     - cf) 01조 14항은 HandS의 데이터 중앙 관리에 있어 추구하는 근본 이념을 실천하는 매커니즘이다.
 
   - 01조 15항. "협의체"는 매년 1회 이상의 규정 적용 실태 조사를 진행하고, 회의 안건에 참고할 자료로서 "데이터 관리 보고서"를 작성하고, 문제점을 회의에서 적극 개선한다.
+
+  - 01조 16항. HandS가 보호해야할 자산이라 판단하는 데이터에는 서문 위에 적힌 "@copyright"에 대한 글이 삽입되거나 같이 이동될 수 있도록 한다.
+
+    - 01조 16항 01호. HandS가 제공받은 자산의 원저작권은 전적으로 회원에게 있다. HandS는 원저작자의 권리보호르 위해 제 3자의 무단 사용을 예방하는 데 최선을 다한다.
+
+    - 01조 16항 02호. HandS로 증여된 방식의 자산 역시, HandS자체의 권리보호를 위해 제 3자의 무단 사용을 예방하는 데 최선을 다한다.
+
+    - 01조 16항 03호. 제 3자의 각 자산의 사용권 범주를 벗어나지 않은 활용은 공정한 사용이라 판단한다.
+
+  - 01조 17항. 모든 데이터는 메타데이터로서 {데이터명}, {권한계정}, {계정별권한}, {주관부서}, {협력부서}, {제작부서}가 존재한다.
+
+    - 01조 17항 01호. 메타데이터의 기록은 활용될 가치가 적을 수 있어, 모든 데이터에 대해 기록할 필요는 없다.
+
+    - 01조 17항 02호. 서버관리자는 서버 이용률을 높이기 위해 최대한 많은 메타데이터와 활용방안에 대한 내용을 서버에 게시한다.
+
+    - 01조 17항 03호. 서버 생성 초기에 데이터들의 제작부서는 서버관리자가 할당된다. 
+
+    - 용어
+        1. 제작부서 : 데이터 최초 제작 부서
+        2. 주관부서 : 데이터 관리 책임 부서
+        3. 협력부서 : 데이터 관리 협력 부서
+        4. 데이터명 : {fullfilenameIE} or {foldername}
 
 - 제 02조. 기본
 
